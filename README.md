@@ -10,3 +10,20 @@ This is a simple user management system implemented in Python.
 4. Run the script using the following command:
    ```sh
    python user_manager.py
+userManager = UserManager()
+
+id1 = userManager.addUser("Jarasar")
+id2 = userManager.addUser("Adil")
+id3 = userManager.addUser("Jarasar")
+
+print(userManager.getUser(id1))  # Should print "Jarasar"
+print(userManager.getUser(id2))  # Should print "Adil"
+print(userManager.getUser(999))  # Should print None
+
+print(userManager.findUserByName("Jarasar"))  # Should print [id1, id3]
+print(userManager.findUserByName("Baha"))  # Should print []
+
+print(userManager.deleteUser(id2))  # Should print True
+print(userManager.deleteUser(999))  # Should print False
+
+print(userManager.getUser(id2))  # Should print None
